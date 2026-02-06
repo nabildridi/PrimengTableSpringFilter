@@ -16,7 +16,7 @@
 ### Step 2 : Configure your Primeng table to work in 'lazy' mode
 [How-to documentation](https://primeng.org/table#virtual-scroll-lazy)
 
-### Step 3 : Send the Primeng request to the server in Angular
+### Step 3 : Send the Primeng request to the server
 
       loadUsersFromServer(event: TableLazyLoadEvent) {
         event.globalFilter = ['username', 'lastname'];
