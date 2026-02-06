@@ -38,7 +38,7 @@
 Example  :
 
     @Repository
-    public  interface UsersRepository extends JpaRepository<User, Long>, *JpaSpecificationExecutor*<User> {
+    public  interface UsersRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
 
 
 
