@@ -1,5 +1,5 @@
 
-##  Spring Boot filter to covert PrimeNg table json request to JPA specification (paging, sorting and filtering for PrimeNg tables)
+##  Spring Boot filter to convert PrimeNg table json request to JPA specification (paging, sorting and filtering for PrimeNg tables)
 
   
 
