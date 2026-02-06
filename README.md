@@ -33,7 +33,7 @@
         });
       }
 
-### Step 4 : Add *JpaSpecificationExecutor* to your repository:
+### Step 4 : Add JpaSpecificationExecutor to your repository:
 
 Example  :
 
