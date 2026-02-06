@@ -91,6 +91,9 @@ Then when the user types 'Fred' in the global filter input, Spring will looks fo
 ### Does this project work in Spring boot 4.x?
 No, it doesn't work because its main dependency doesn't support Spring boot 4.x, as soon as the situation changes then I will update the project.
 
+### Minimum required Java version :
+Java 17
+
 ### Tested on :
 
  - Spring boot version 3.5.10
