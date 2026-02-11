@@ -1,4 +1,5 @@
-
+> ## This project is a rewrite  of my other archived project [SpringBootGenericPagingFilteringForPrimengTable](https://github.com/nabildridi/SpringBootGenericPagingFilteringForPrimengTable) to make it simple and easy to install
+> 
 ##  Spring Boot filter to convert PrimeNg table json request to JPA specification (paging, sorting and filtering for PrimeNg tables
   
 
