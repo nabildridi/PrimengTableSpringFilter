@@ -6,7 +6,7 @@
 
 	<groupId>io.github.nabildridi</groupId>
 	<artifactId>PrimengTableSpringFilter</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 	<packaging>jar</packaging>
 	
 	
@@ -61,6 +61,13 @@
 
 
 	<dependencies>
+	
+		<dependency>
+			<groupId>org.springframework</groupId>
+    		<artifactId>spring-web</artifactId>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

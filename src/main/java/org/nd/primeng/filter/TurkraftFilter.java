@@ -7,25 +7,23 @@ import java.util.Map;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
 
-import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
-public class TurkraftFilter implements Filter {
+public class TurkraftFilter extends OncePerRequestFilter {
 
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-
+	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 		Map<String, String[]> originalParams = new HashMap<>(request.getParameterMap());
 		HttpServletRequest wrappedRequest = new TurkraftConverter((HttpServletRequest) request, originalParams);
 
-		chain.doFilter(wrappedRequest, response);
+		filterChain.doFilter(wrappedRequest, response);
 
 	}
 
