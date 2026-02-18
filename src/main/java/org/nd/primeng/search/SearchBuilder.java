@@ -323,7 +323,7 @@ public class SearchBuilder {
 			if (matchMode.equals("startsWith"))
 				operator = "{0}~~''{1}%''";
 			if (matchMode.equals("notContains"))
-				operator = "{0}!''%{1}%''";
+				operator = "not exists({0}~~''%{1}%'')";
 			if (matchMode.equals("endsWith"))
 				operator = "{0}~~''%{1}''";
 			if (matchMode.equals("equals"))
