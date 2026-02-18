@@ -1,6 +1,6 @@
 > ## This project is a rewrite  of my other archived project [SpringBootGenericPagingFilteringForPrimengTable](https://github.com/nabildridi/SpringBootGenericPagingFilteringForPrimengTable) to make it simple and easy to install
 > 
-##  Spring Boot filter to convert PrimeNg table json request to JPA specification (paging, sorting and filtering for PrimeNg tables
+##  Spring Boot filter to convert PrimeNg table json request to JPA specification (paging, sorting and filtering for PrimeNg tables)
   
 
 ## Goal of the project
@@ -93,6 +93,18 @@ See step 3, if you want to use the global filter, you need to specify what colum
     event.globalFilter = ['username', 'lastname'];
 ```
 Then when the user types 'Fred' in the global filter input, Spring will looks for values containing 'Fred' in **username** and **lastname** columns.
+
+
+> [!CAUTION]
+> ### Important note :
+> **Don't** add this annotation to your spring boot application
+>   
+> ```java
+> @EnableSpringDataWebSupport(pageSerializationMode = PageSerializationMode.VIA_DTO)
+> ```
+>   
+> That annotation generates a problem in the sort parameter of [Turkraft SpringFilter](https://github.com/turkraft/springfilter)  
+
 
 ### Does this project work in Spring boot 4.x?
 No, it doesn't work because its main dependency doesn't support Spring boot 4.x, as soon as the situation changes then I will update the project.
