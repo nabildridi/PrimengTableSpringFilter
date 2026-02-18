@@ -6,37 +6,39 @@
 
 	<groupId>io.github.nabildridi</groupId>
 	<artifactId>PrimengTableSpringFilter</artifactId>
-	<version>1.1</version>
+	<version>1.2</version>
 	<packaging>jar</packaging>
-	
-	
-	 <name>io.github.nabildridi:PrimengTableSpringFilter</name>
 
-  <description>
-    Convert Primeng table json request to a JPA specification
-  </description>
 
-  <url>https://github.com/nabildridi/PrimengTableSpringFilter</url>
+	<name>io.github.nabildridi:PrimengTableSpringFilter</name>
 
-  <scm>
-    <connection>scm:git:git://github.com/nabildridi/PrimengTableSpringFilter.git</connection>
-    <developerConnection>scm:git:ssh://github.com/nabildridi/PrimengTableSpringFilter.git</developerConnection>
-    <url>https://github.com/nabildridi/PrimengTableSpringFilter/tree/main</url>
-  </scm>
+	<description>
+		Convert Primeng table json request to a JPA specification
+	</description>
 
-  <developers>
-    <developer>
-      <name>Nabil Dridi</name>
-      <email>nabil.dridi@gmail.com</email>
-    </developer>
-  </developers>
+	<url>https://github.com/nabildridi/PrimengTableSpringFilter</url>
 
-  <licenses>
-    <license>
-      <name>MIT License</name>
-      <url>https://www.opensource.org/licenses/mit-license.php</url>
-    </license>
-  </licenses>
+	<scm>
+		<connection>
+			scm:git:git://github.com/nabildridi/PrimengTableSpringFilter.git</connection>
+		<developerConnection>
+			scm:git:ssh://github.com/nabildridi/PrimengTableSpringFilter.git</developerConnection>
+		<url>https://github.com/nabildridi/PrimengTableSpringFilter/tree/main</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Nabil Dridi</name>
+			<email>nabil.dridi@gmail.com</email>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>https://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
 
 
 	<properties>
@@ -61,10 +63,10 @@
 
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>org.springframework</groupId>
-    		<artifactId>spring-web</artifactId>
+			<artifactId>spring-web</artifactId>
 			<scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
@@ -98,97 +100,97 @@
 	</dependencies>
 
 
-  <profiles>
+	<profiles>
 
-    <profile>
+		<profile>
 
-      <id>release-sign-artifacts</id>
+			<id>release-sign-artifacts</id>
 
-      <activation>
-        <property>
-          <name>gpg.passphrase</name>
-        </property>
-      </activation>
+			<activation>
+				<property>
+					<name>gpg.passphrase</name>
+				</property>
+			</activation>
 
-      <build>
+			<build>
 
-        <plugins>
+				<plugins>
 
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.2.7</version>
-            <configuration>
-              <gpgArguments>
-                <arg>--pinentry-mode</arg>
-                <arg>loopback</arg>
-              </gpgArguments>
-            </configuration>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>3.2.7</version>
+						<configuration>
+							<gpgArguments>
+								<arg>--pinentry-mode</arg>
+								<arg>loopback</arg>
+							</gpgArguments>
+						</configuration>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 
-        </plugins>
+				</plugins>
 
-      </build>
+			</build>
 
-    </profile>
+		</profile>
 
-  </profiles>
+	</profiles>
 
-  <build>
+	<build>
 
-    <plugins>
+		<plugins>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>3.4.0</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.4.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.11.2</version>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.11.2</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
-      <plugin>
-        <groupId>org.sonatype.central</groupId>
-        <artifactId>central-publishing-maven-plugin</artifactId>
-        <version>0.9.0</version>
-        <extensions>true</extensions>
-        <configuration>
-          <publishingServerId>central</publishingServerId>
-          <autoPublish>true</autoPublish>
-          <waitUntil>published</waitUntil>
-        </configuration>
-      </plugin>
+			<plugin>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.9.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<publishingServerId>central</publishingServerId>
+					<autoPublish>true</autoPublish>
+					<waitUntil>published</waitUntil>
+				</configuration>
+			</plugin>
 
-    </plugins>
+		</plugins>
 
-  </build>
+	</build>
 
 </project>

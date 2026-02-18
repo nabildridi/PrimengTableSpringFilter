@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.nd.primeng.search.SearchBuilder;
@@ -18,16 +19,16 @@ import jakarta.servlet.ServletInputStream;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
 
-public class TurkraftConverter extends HttpServletRequestWrapper {
+public class PrimengTurkraftConverter extends HttpServletRequestWrapper {
 
 	private SearchBuilder searchBuilder = new SearchBuilder();
 	private Map<String, String[]> paramsMap;
 
 	private byte[] cachedBody;
 
-	public TurkraftConverter(HttpServletRequest request, Map<String, String[]> originalParams) throws IOException {
+	public PrimengTurkraftConverter(HttpServletRequest request) throws IOException {
 		super(request);
-		paramsMap = originalParams;
+		paramsMap = new HashMap<>(request.getParameterMap());
 		getBody(request);
 	}
 
@@ -48,11 +49,11 @@ public class TurkraftConverter extends HttpServletRequestWrapper {
 		}
 	}
 
-	private String convertPrimengJson(String body) throws IOException {
+	private void convertPrimengJson(String body) throws IOException {
 
 		Map<String, String[]> queryParams = searchBuilder.process(body);
 		paramsMap.putAll(queryParams);
-		return body;
+
 	}
 
 	@Override
