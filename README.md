@@ -10,7 +10,6 @@ The goal of the this project is to make this server side processing the most gen
 
 [![Sonatype Central](https://maven-badges.sml.io/sonatype-central/io.github.nabildridi/PrimengTableSpringFilter/badge.svg?subject=Maven%20Central&color=blue)](https://mvnrepository.com/artifact/io.github.nabildridi/PrimengTableSpringFilter/1.3)
 
-###  Version : **1.3**
 
 ### Step 1 : Add the dependency to your project
 ```xml
