@@ -8,15 +8,26 @@
 PrimeNg tables have a 'lazy' mode when displaying data, it sends all the requests of paging, sorting and filtering to the server to be processed.
 The goal of the this project is to make this server side processing the most generic possible (Spring boot).
 
-[![Sonatype Central](https://maven-badges.sml.io/sonatype-central/io.github.nabildridi/PrimengTableSpringFilter/badge.svg?subject=Maven%20Central&color=blue)](https://mvnrepository.com/artifact/io.github.nabildridi/PrimengTableSpringFilter/1.3)
+[![Sonatype Central](https://maven-badges.sml.io/sonatype-central/io.github.nabildridi/PrimengTableSpringFilter/badge.svg?subject=Maven%20Central&color=blue)](https://mvnrepository.com/artifact/io.github.nabildridi/PrimengTableSpringFilter/1.6)
 
 
 ### Step 1 : Add the dependency to your project
+
+#### For Spring Boot 3 only
 ```xml
     <dependency>    
 	    <groupId>io.github.nabildridi</groupId>    
 	    <artifactId>PrimengTableSpringFilter</artifactId>    
-	    <version>1.3</version>    
+	    <version>1.5</version>    
+    </dependency>
+```
+
+#### For Spring Boot 4 only
+```xml
+    <dependency>    
+	    <groupId>io.github.nabildridi</groupId>    
+	    <artifactId>PrimengTableSpringFilter</artifactId>    
+	    <version>1.6</version>    
     </dependency>
 ```
 
@@ -106,9 +117,6 @@ Then when the user types 'Fred' in the global filter input, Spring will looks fo
 >   
 > That annotation generates a problem in the sort parameter of [Turkraft SpringFilter](https://github.com/turkraft/springfilter)  
 
-
-### Does this project work in Spring boot 4.x?
-No, it doesn't work because its main dependency doesn't support Spring boot 4.x, as soon as the situation changes then I will update the project.
 
 ### Minimum required Java version :
 Java 17
