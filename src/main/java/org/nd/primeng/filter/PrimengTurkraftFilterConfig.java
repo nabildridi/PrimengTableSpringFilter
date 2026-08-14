@@ -8,13 +8,12 @@ import org.springframework.core.Ordered;
 @Configuration
 public class PrimengTurkraftFilterConfig {
 
-
-    @Bean
-    public FilterRegistrationBean<PrimengTurkraftFilter> loggingFilterRegistration() {
-        FilterRegistrationBean<PrimengTurkraftFilter> registration = new FilterRegistrationBean<>();
-        registration.setFilter(new PrimengTurkraftFilter());
-        registration.setOrder(Ordered.LOWEST_PRECEDENCE);
-        return registration;
-    }
+	@Bean
+	public FilterRegistrationBean<PrimengTurkraftFilter> loggingFilterRegistration() {
+		FilterRegistrationBean<PrimengTurkraftFilter> registration = new FilterRegistrationBean<>();
+		registration.setFilter(new PrimengTurkraftFilter());
+		registration.setOrder(Ordered.LOWEST_PRECEDENCE);
+		return registration;
+	}
 
 }
