@@ -85,7 +85,7 @@ public class SearchBuilder {
 				if (globalFieldsNode.isArray()) {
 					Iterator<JsonNode> fieldsIter = globalFieldsNode.iterator();
 					while (fieldsIter.hasNext()) {
-						globalFields.add(fieldsIter.next().asText());
+						globalFields.add(fieldsIter.next().asString());
 					}
 
 				}
@@ -93,7 +93,7 @@ public class SearchBuilder {
 				if (globalFieldsNode.isObject()) {
 
 					if (isValueNotNullAndNotEmpty(globalFieldsNode)) {
-						globalFields.add(globalFieldsNode.asText());
+						globalFields.add(globalFieldsNode.asString());
 					}
 
 				}
@@ -141,7 +141,7 @@ public class SearchBuilder {
 				} else {
 
 					if (isValueNotNullAndNotEmpty(filterNode)) {
-						String globalFilter = filterNode.get("value").asText();
+						String globalFilter = filterNode.get("value").asString();
 						parsingResult.setGeneralFilter(globalFilter);
 					}
 
@@ -169,7 +169,7 @@ public class SearchBuilder {
 
 			// this is multisort
 			for (JsonNode multiSortItem : multiSortMetaArray) {
-				String sortField = multiSortItem.get("field").asText();
+				String sortField = multiSortItem.get("field").asString();
 
 				int sortOrderInt = multiSortItem.get("order").asInt();
 				String sortOrder = null;
@@ -189,7 +189,7 @@ public class SearchBuilder {
 			String sortField = null;
 			JsonNode node = primengRequestNode.get("sortField");
 			if (node != null) {
-				sortField = node.asText();
+				sortField = node.asString();
 			}
 
 			Integer sortOrderInt = null;
@@ -400,21 +400,21 @@ public class SearchBuilder {
 			columnFilter.setMatchMode("in");
 
 		} else {
-			valueToSearch = jsonFilter.get("value").asText();
+			valueToSearch = jsonFilter.get("value").asString();
 
 			valueToSearch = escapeSpecialChars(valueToSearch);
 			columnFilter.setValueToSearch(valueToSearch);
 
 			JsonNode matchModeNode = jsonFilter.get("matchMode");
 			if (matchModeNode != null) {
-				columnFilter.setMatchMode(matchModeNode.asText());
+				columnFilter.setMatchMode(matchModeNode.asString());
 			}
 
 		}
 
 		JsonNode operatorNode = jsonFilter.get("operator");
 		if (operatorNode != null) {
-			columnFilter.setOperator(operatorNode.asText());
+			columnFilter.setOperator(operatorNode.asString());
 		}
 
 		ColumnType type = findType(valueNode);
@@ -442,9 +442,9 @@ public class SearchBuilder {
 			return ColumnType.NUMERIC;
 		}
 
-		if (valueNode.isTextual()) {
+		if (valueNode.isString()) {
 			// test if date else it's a string
-			String value = valueNode.asText();
+			String value = valueNode.asString();
 			if (isDate(value)) {
 				return ColumnType.DATE;
 			} else {
