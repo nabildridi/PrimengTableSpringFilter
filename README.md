@@ -1,7 +1,8 @@
 > ## This project is a rewrite  of my other archived project [SpringBootGenericPagingFilteringForPrimengTable](https://github.com/nabildridi/SpringBootGenericPagingFilteringForPrimengTable) to make it simple and easy to install
 > 
 ##  Spring Boot filter to convert PrimeNg table json request to JPA specification (paging, sorting and filtering for PrimeNg tables)
-  
+
+
 
 ## Goal of the project
 
@@ -9,6 +10,10 @@ PrimeNg tables have a 'lazy' mode when displaying data, it sends all the request
 The goal of the this project is to make this server side processing the most generic possible (Spring boot).
 
 [![Sonatype Central](https://maven-badges.sml.io/sonatype-central/io.github.nabildridi/PrimengTableSpringFilter/badge.svg?subject=Maven%20Central&color=blue)](https://mvnrepository.com/artifact/io.github.nabildridi/PrimengTableSpringFilter/1.6)
+
+
+> [!NOTE]  
+> Works also with [Optimus-UI](https://optimus.openng.org/) : The fork of PrimeNg because the latter is no longer an open source project.
 
 
 ### Step 1 : Add the dependency to your project
